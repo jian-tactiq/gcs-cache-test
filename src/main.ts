@@ -81,7 +81,10 @@ async function getBestMatch(
 
 async function main() {
   const inputs = getInputs();
-  const bucket = new Storage({ keyFilename: inputs.keyFileName }).bucket(inputs.bucket);
+  const storage = inputs.keyFileName 
+    ? new Storage({ keyFilename: inputs.keyFileName })
+    : new Storage();
+  const bucket = storage.bucket(inputs.bucket);
 
   const folderPrefix = `${github.context.repo.owner}/${github.context.repo.repo}`;
   const exactFileName = `${folderPrefix}/${inputs.key}.tar`;
