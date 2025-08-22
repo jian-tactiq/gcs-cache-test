@@ -19,7 +19,7 @@ contain your target Google Cloud Storage bucket. **As simple as that.**
 
 > workflow.yml
 
-```yaml
+```yamlsdfdsfdsf
 - name: Authenticate to Google Cloud
   uses: google-github-actions/auth@v0
   with:
